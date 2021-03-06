@@ -11,6 +11,7 @@
       <h1 class="text-4xl">
         Hi, {{ jwt_decoded.given_name }}
       </h1>
+      <button @click="submit">emit</button>
       <hr class="m-6">
       <code><strong>Decoded JWT:</strong> {{ jwt_decoded }}</code>
     </div>
@@ -31,6 +32,12 @@ export default {
   },
   data () {
     return { jwt_decoded: null }
-  }
+  },
+ methods: {
+   submit() {
+       console.log("emit");
+
+     }
+   }
 }
 </script>
