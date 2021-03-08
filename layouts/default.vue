@@ -1,8 +1,9 @@
 <template>
   <div class="flex-auto">
     <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 shadow-lg">
+      <v-app-bar-nav-icon style="color:white; margin-right:20px" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <nuxt-link to="/" class="flex items-center flex-shrink-0 text-white text-xl tracking-tight mr-6">
-        Nuxt.js and Azure Active Directory authorization code example
+        FEM as a Service<!--Nuxt.js and Azure Active Directory authorization code example-->
       </nuxt-link>
       <div>
         <a v-if="!this.$auth.loggedIn" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0" @click="$auth.loginWith('aad')">Sign in with Microsoft</a>

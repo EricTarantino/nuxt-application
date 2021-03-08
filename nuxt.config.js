@@ -28,7 +28,6 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/socket.client.js' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -36,7 +35,8 @@ module.exports = {
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/vuetify',
   ],
   /*
   ** Nuxt.js modules
@@ -44,7 +44,9 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    '@nuxtjs/vuetify'
+    //'~/modules/ws'
   ],
   router: {
     middleware: ['auth']
@@ -100,4 +102,3 @@ module.exports = {
     }
   }
 }
-
