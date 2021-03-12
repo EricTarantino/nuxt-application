@@ -22,7 +22,6 @@
 
 <style>
 .AzureLogo {
-  animation: 0.5s appear;
   margin: auto;
 }
 
