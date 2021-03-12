@@ -1,0 +1,3 @@
+Der Client spricht mit dem Server und der Server spricht mit Clients per Websocket Nachricht, statt ausschließlicher http-GET/POST-requests vom Client and den Server. Dadurch ist Polling vom Client zum Server nicht nötig. Das Netzwerk wird nur dann belastet, wenn eine Nachricht geschickt wird. Die Websocket Verbindung ermöglicht weitere Optionen. 
+
+Ein Vorteil von Nuxt ist, dass Subpages in einer App durch hinzufügen einer html/.vue Datei erstellt werden, die Verlinkung findet automatisch statt. Wer mal eine html-webseite probiert hat zu schreiben, weiß wie schnell es schief gehen kann Verlinkunge zu managen. Nuxt automatisiert das Frontendseitig. Details zu dem Mechanismus fänden sich bei Interesse unter nuxt-routing.md
