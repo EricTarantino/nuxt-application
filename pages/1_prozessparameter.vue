@@ -1,3 +1,39 @@
 <template>
-  <NuxtLink to="/">From Prozessparameter to Home page</NuxtLink>
+  <div>
+    <NuxtLink to="/">From Prozessparameter to Home page</NuxtLink>
+    <v-container>
+      <v-row>
+        <v-col>
+          1
+        </v-col>
+        <v-col>
+          2
+        </v-col> 
+      </v-row>
+      <v-row>
+        <v-col>
+          3
+        </v-col>
+        <v-col>
+          4
+        </v-col> 
+      </v-row>
+      <v-row>
+        <v-col>
+          5
+        </v-col>
+        <v-col>
+          6
+        </v-col> 
+      </v-row>
+      <v-row>
+        <v-col>
+          7
+        </v-col>
+        <v-col>
+          8
+        </v-col> 
+      </v-row>
+    </v-container>
+  </div>
 </template>
