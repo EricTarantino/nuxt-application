@@ -1,1 +1,1 @@
-(Vuetify grid system)[https://vuetifyjs.com/en/components/grids/]
+[Vuetify grid system](https://vuetifyjs.com/en/components/grids/)
