@@ -1,6 +1,7 @@
 
 module.exports = {
   mode: 'spa',
+  components: true,
   /*
   ** Headers of the page
   */
