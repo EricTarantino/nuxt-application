@@ -16,10 +16,12 @@
     "@nuxtjs/auth-next": "^5.0.0-1590092757.1671dba",
     "@nuxtjs/axios": "^5.10.3",
     "@types/jwt-decode": "^2.2.1",
+    "chart.js": "^2.9.4",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "jwt-decode": "^2.2.0",
     "nuxt": "latest",
+    "vue-chartjs": "^3.5.1",
     "ws": "^7.4.4"
   },
   "devDependencies": {

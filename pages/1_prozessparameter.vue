@@ -1,39 +1,52 @@
 <template>
   <div>
-    <NuxtLink to="/">From Prozessparameter to Home page</NuxtLink>
-    <v-container>
-      <v-row>
-        <v-col>
-          1
-        </v-col>
-        <v-col>
-          2
-        </v-col> 
-      </v-row>
-      <v-row>
-        <v-col>
-          3
-        </v-col>
-        <v-col>
-          4
-        </v-col> 
-      </v-row>
-      <v-row>
-        <v-col>
-          5
-        </v-col>
-        <v-col>
-          6
-        </v-col> 
-      </v-row>
-      <v-row>
-        <v-col>
-          7
-        </v-col>
-        <v-col>
-          8
-        </v-col> 
-      </v-row>
-    </v-container>
+    <v-app>  
+      <v-container fluid>
+        <v-row justify="center" class="mb-4">
+          <processparametertopbar @clicked="toggleComponent"/>
+        </v-row>
+        <processparameter :showMaterial="showMaterial" :showRingjack="showRingjack" :showProcess="showProcess"/>
+      </v-container>
+    </v-app>
   </div>
 </template>
+
+<script>
+import Processparameter from '~/components/Femprocessparameter.vue'
+import Processparametertopbar from '~/components/Femprocessparameter_topbar.vue'
+
+export default {
+  transition: 'transition',
+  components: {
+    Processparameter,
+    Processparametertopbar
+  },
+  data: () => ({
+    showMaterial: false,
+    showRingjack: false,
+    showProcess: false,
+  }),
+  methods: {
+    toggleComponent (value) {
+      this[value] = !this[value]
+    }
+  }
+}
+</script>
+
+<style>
+.transition-enter-active, .transition-leave-active { transition: opacity .4s; }
+.transition-enter, .transition-leave-active { opacity: 0; }
+.zero{
+  border-radius:
+}
+.v-menu__content{
+  border-radius:0px
+}
+.lifted{
+  padding-bottom:4%
+}
+.button-width{
+  width: 150px
+}
+</style>

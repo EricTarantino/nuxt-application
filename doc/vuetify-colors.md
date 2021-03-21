@@ -1,0 +1,1 @@
+[vuetify colors](https://vuetifyjs.com/en/styles/colors/)

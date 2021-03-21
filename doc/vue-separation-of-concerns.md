@@ -1,0 +1,1 @@
+[vue-separation-of-concerns](https://vuejs.org/v2/guide/single-file-components.html#What-About-Separation-of-Concerns)

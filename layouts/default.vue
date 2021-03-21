@@ -1,22 +1,58 @@
 <template>
-  <div class="flex-auto">
-    <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 shadow-lg">
-      <!--<v-app-bar-nav-icon style="color:white; margin-right:20px" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>-->
-      <nuxt-link to="/" class="flex items-center flex-shrink-0 text-white text-xl tracking-tight mr-6">
-        FEM as a Service
-      </nuxt-link>
-      <div>
-        <a v-if="!this.$auth.loggedIn" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0" @click="$auth.loginWith('aad')">Sign in with Microsoft</a>
-        <a v-else="" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0" @click="$auth.logout('aad')">Sign out</a>
-      </div>
-    </nav>
-    <nuxt />
+  <div>    
+    <div class="flex-auto">
+      <nav  class="flex items-center justify-between flex-wrap bg-gray-900 p-6 shadow-lg">
+        <!--<v-app-bar-nav-icon style="color:white; margin-right:20px" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>-->
+        <nuxt-link to="/" class="flex items-center flex-shrink-0 text-white text-xl tracking-tight mr-6">
+          FEM as a Service
+        </nuxt-link>
+        <div>
+          <a v-if="!this.$auth.loggedIn" class="zero inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-0" @click="$auth.loginWith('aad')">Sign in with Microsoft</a>
+          <a v-if="this.$auth.loggedIn" class="zero inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-0" @click="$auth.logout('aad')">Sign out</a>
+        </div>
+      </nav>
+    </div>  
+    <subnav/>      
+    <nuxt style="padding-left:10%; padding-right:10%"/>    
+    <div v-if="this.$auth.loggedIn" class="p-6 justify-center text-center overflow-auto" >
+      <!-- insert jwt token decoded -->
+      <Sidebar style="margin-top:80px" jwtDecoded="jwt_decoded"/>
+    </div>
+    <div id="footer">
+      <dfooter :einstellungen="this.$auth.loggedIn"/>
+    </div>
   </div>
 </template>
 
 <!-- move websocket here -->
+<script>
+  export default {
+    created () {
+      console.log(this.$vuetify.breakpoint)
+    },
+
+    computed: {
+      imageHeight () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return '220px'
+          case 'sm': return '400px'
+          case 'md': return '500px'
+          case 'lg': return '600px'
+          case 'xl': return '800px'
+        }
+        console.log(this.$vuetify.breakpoint)
+      },
+    },
+  }
+</script>
 
 <style>
+#footer{
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -57,11 +93,14 @@ html {
   color: #35495e;
   text-decoration: none;
   padding: 10px 30px;
-  margin-left: 15px;
 }
 
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.zero {
+  border-radius:0px
 }
 </style>

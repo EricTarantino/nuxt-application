@@ -1,0 +1,1 @@
+(navigation drawer)[https://vuetifyjs.com/en/components/navigation-drawers/#expand-on-hover]

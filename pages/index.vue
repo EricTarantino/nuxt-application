@@ -8,7 +8,7 @@
       <a class="tracking-tight cursor-pointer" @click="$auth.loginWith('aad')">Sign in with Microsoft</a>
     </div>
     <div v-else="">
-      <Sidebar jwtDecoded="jwt_decoded"/>
+      
     </div>
     <br>
   </div>
@@ -56,5 +56,9 @@ export default {
 <style>
 .avatar {
   margin-right:20px
+}
+
+.zero{
+  border-radius:0px
 }
 </style>
