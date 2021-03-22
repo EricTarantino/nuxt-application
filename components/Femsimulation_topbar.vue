@@ -1,32 +1,32 @@
 <template>
     <row>
       <v-col cols="12" class="label-size pa-0">
-        <v-btn
-          tile
-          class="button-width"
-          :color="showStatus ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"
-          x-large
-          @click='sendToParent("showStatus"); toggleColor(showStatus)'
-        >
-        Status
-        </v-btn>
         <v-btn    
           tile    
           class="button-width" 
-          :color="showChart ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"  
+          :color="showOverview ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"  
           x-large
-          @click='sendToParent("showOverview"); toggleColor(showOverview)'
+          @click='sendToParent("showOverview"); showOverview=!showOverview'
         >
         Übersicht
         </v-btn>
         <v-btn
           tile
           class="button-width" 
-          :color="showFilter ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"
+          :color="showViewport ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"
           x-large
-          @click='sendToParent("showViewport"); toggleColor(showViewport)'
+          @click='sendToParent("showViewport"); showViewport=!showViewport'
         >
         Ansicht
+        </v-btn>
+        <v-btn
+          tile
+          class="button-width"
+          :color="showFavorites ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"
+          x-large
+          @click='sendToParent("showFavorites"); showFavorites=!showFavorites'
+        >
+        Favoriten
         </v-btn>
       </v-col>
     </row>
@@ -36,7 +36,7 @@
 export default {
     data: () => ({
       showOverview: false,
-      showStatus: false,
+      showFavorites: false,
       showViewport: false,
     }),
     methods:{

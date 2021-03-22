@@ -5,9 +5,9 @@
         :headers="headers"
         :items="columns"
         :items-per-page="5"
-          :footer-props="{
-            'items-per-page-options': [10, 20, 30]
-          }"
+        :footer-props="{
+          'items-per-page-options': [10, 20, 30]
+        }"
         class="elevation-1"
       ></v-data-table>
     </v-col>

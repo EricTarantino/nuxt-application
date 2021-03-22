@@ -22,9 +22,9 @@
         <v-btn
           class="button-width"
           tile
-          :color="showStatus ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"
+          :color="showFavorites ? 'deep-purple lighten-1' : 'deep-purple lighten-3'"
           x-large
-          @click='sendToParent("showTable"); showStatus = !showStatus'
+          @click='sendToParent("showTable"); showFavorites = !showFavorites'
         >
         Table
         </v-btn>
@@ -38,7 +38,7 @@ export default {
       items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
       showChart: false,
       showFilter: false,
-      showStatus: false,
+      showFavorites: false,
       showTable: false
     }),
     methods:{
