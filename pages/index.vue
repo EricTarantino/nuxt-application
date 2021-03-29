@@ -7,9 +7,6 @@
       </h1>
       <a class="tracking-tight cursor-pointer" @click="$auth.loginWith('aad')">Sign in with Microsoft</a>
     </div>
-    <div v-else="">
-      
-    </div>
     <br>
   </div>
 </template>

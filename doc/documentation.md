@@ -1,9 +1,10 @@
-Topics
+topics
 authorization
 filtering
 ui
-
-Technologies
+responsiveness
+technologies
 nuxt
 vuetify
 websocket
+styleguide

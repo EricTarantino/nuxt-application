@@ -1,5 +1,5 @@
 <template>
-    <row>
+    <v-row>
       <v-col cols="12" class="label-size pa-0">
         <v-btn
           class="button-width"
@@ -29,7 +29,7 @@
         Table
         </v-btn>
       </v-col>
-    </row>
+    </v-row>
 </template>
 
 <script>

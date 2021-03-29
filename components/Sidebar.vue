@@ -2,7 +2,10 @@
   <v-navigation-drawer
     expand-on-hover
     absolute         
-    hide-overlay  
+    hide-overlay
+    enable-resize-watcher
+    :elevation="0"
+    mobile-breakpoint="340"
   >
     <v-list>
       <v-list-item-group>
@@ -65,29 +68,13 @@ export default {
       jwt_decoded: context.app.$auth.$storage.getUniversal('jwt_decoded')
     }
   },
-  data () {
-    return { jwt_decoded: null, connection: null}
+  data: function () {
+    return { 
+      jwt_decoded: null, 
+      connection: null
+    }
   },
   created: function(){
-    console.log("Starting connection to WebSocket Server")
-    
-    this.connection = new WebSocket('ws://localhost:3000')
-
-    this.connection.onmessage = function(event) {
-      console.log(event);
-    }
-
-    this.connection.onopen = function(event) {
-      console.log(event)
-      console.log("Successfully connected to the echo websocket server...")
-    }
-    
-  },
-
-  methods:{
-    sendMessage(){
-      this.connection.send("message", {test:"message"})
-    }
   }
 }
 </script>

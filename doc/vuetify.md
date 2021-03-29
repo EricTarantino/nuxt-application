@@ -10,3 +10,4 @@ The UI uses a subset of vuetify components<br>
 [vuetify-data-table.md](https://github.com/EricTarantino/nuxt-application/blob/socket.io/doc/vuetify-data-table.md)<br>
 [vuetify-separation-of-concerns.md](https://github.com/EricTarantino/nuxt-application/blob/socket.io/doc/vuetify-separation-of-concerns.md)<br>
 [vuetify-text-fields.md](https://github.com/EricTarantino/nuxt-application/blob/socket.io/doc/vuetify-text-fields.md)<br>
+[vuetify-list_favorites.md](https://github.com/EricTarantino/nuxt-application/blob/socket.io/doc/vuetify-list_favorites.md)<br><>

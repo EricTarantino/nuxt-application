@@ -7,6 +7,7 @@
     <v-row
       justify="center"
       no-gutters
+      id="footerHeight"
     >
       <v-btn
         v-for="link in getLinks()"

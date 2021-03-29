@@ -1,6 +1,5 @@
 <template>
   <div>
-    <v-app>
       <NuxtLink to="/">From Prozessparameter to Home page</NuxtLink>
       <v-container>
         <v-row v-row>
@@ -100,7 +99,6 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-app>
   </div>
 </template>
 

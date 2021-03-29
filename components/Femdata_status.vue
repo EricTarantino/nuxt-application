@@ -1,5 +1,5 @@
 <template>
-  <row>
+  <v-row>
     <v-col cols="12" class="label-size"> 
       <v-btn
         tile
@@ -9,5 +9,5 @@
         Status
       </v-btn>
     </v-col>
-  </row>
+  </v-row>
 </template>

@@ -1,6 +1,5 @@
 <template>
-  <div class="left_border">
-
+  <div ref="processParameter" class="left_border"> 
     <div id="material" v-if="showMaterial" style="padding-top:30px">
       <v-row class="hml">
         <v-col cols="3" class="label-size">
@@ -201,16 +200,38 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  props:["showMaterial", "showRingjack", "showProcess"],
-  data: () => ({
+  data:() => ({
+    processParameterHeight: 0,
     items: ['130426_HS-MaterialDB_FerrousAlloys_V6.csv', '130426_HS-MaterialDB_Non-FerrousAlloys_V6.csv'],
     rules: [
       value => !!value || 'Required.',
       value => (Number(String(value).replace(/[^0-9]/g, '')) >= 5) || 'Mindestens 5 Ziffern', // Anzahl an Nachkommastellen?
     ],
-    model: "Matrizenfase"
+    model: "Matrizenfase",
   }),
+  computed: mapState([
+  'showMaterial','showRingjack','showProcess'
+  ]),
+  watch:{
+    showMaterial:function(){
+      this.setProcessParameterHeight()
+    },
+    showRingjack:function(){
+      this.setProcessParameterHeight()
+    },
+    showProcess:function(){
+      this.setProcessParameterHeight()
+    }
+  },
+  methods:{
+    setProcessParameterHeight(){
+      setTimeout(function(){
+        this.$store.commit('setProcessParameterHeight', this.$refs['processParameter'].clientHeight); 
+      }.bind(this), 0)
+    }
+  }
 }
 </script>
 
